@@ -1,0 +1,248 @@
+Git is used for CI & CD
+
+CI
+	Continuous Integration
+
+Ex:
+	I have deployed my application in aws EKS cluster
+
+	whenever developer does some changes, i dont want to redeploy.
+	so i ask developer to push the changes to the GitLab or Github repository
+
+	CI is implemented in aws using Code Pipeline
+	this gets authorization from Git and git will notify aws when changes are pushed
+
+
+
+
+First time
+	Lead will deploye an empty project
+	we develop and push to git repository.
+	it is automatically deployed using CI	(in aws CI is code pipeline)
+
+
+	here, git integrates TekStac
+	
+	we are supposed to deploy the project in tekstac. but Lead only creates the project in tekstac
+	and integrates git lab with that tekstack project
+
+	we push project to git lab.
+
+
+
+==================================
+Tables
+Cards
+drop downs
+Nav Navbar
+Paginataion
+Forms
+----------------------------------
+
+
+1) download and install
+	node js
+
+
+Node Package Manager		(npm)
+	
+
+1) tsc				type script compiler
+2) angular			
+
+Then we will create angular projects 
+
+
+after downloading and installing node js in your computer
+	node -v
+
+1) install angular
+	npm install -g @angular/cli
+
+
+=====================
+Why did we install "Typescript"?
+what is typescript?
+what is the need for ts?
+
+Did we learn javascript?
+
+while learning javascript, 	
+
+	Last version of Javascript is 			ES6
+	
+	Why ES7 will not come?
+
+whenever a new version of javascript was introduced,
+	a new version of browser was also required 
+
+this is an inconvenience.
+	so instead of introducing a new version of javascript,
+	they introduced a new language called typescript, which developers can compile (to translate into js)
+
+every 6 month, a new version of angular comes
+	new features, syntax, etc are introduced
+
+browsers need not be upgraded because,
+	we are doing angular coding in typescript language which is translated into javascript 
+
+-------------------
+Typescript code:
+	let no1:number=20;
+	let no2:number=30;
+	let result:number=no1+no2;
+	console.log(result);
+
+when we compile the above .ts file, we get below .js file
+
+Javascript code:
+	var no1 = 20;
+	var no2 = 30;
+	var result = no1 + no2;
+	console.log(result);
+
+
+Javascript is completely allowed in typescript program.
+
+
+HOW TO CREATE OUR ANGULAR PROJECT
+1)	ng new projectname					name should not start with number
+	asks if you need "routing" or not.		i chose No
+	style?						i chose CSS
+
+
+
+
+while pushing "angular" projects to git
+we use .gitignore
+
+in this file we specify
+	node_modules
+
+
+2) to run this project
+	go inside the project:
+		cd projectname
+
+3) ng serve
+or
+
+	ng serve -o			(o means, open in default browser)
+
+
+http://localhost:4200
+
+
+
+npm install -g @angular/cli
+ng -v version
+npm install -g typescript
+tsc -v
+ng new project1 --style=css --routing
+cd project1
+ng serve -o
+========================
+
+lets understand the project that we have just created
+lets open visual studio code
+-----------------------------
+Open the angular project folder
+
+modules
+	contain 
+		component
+		service
+		pipe		
+		class
+	
+by default, a new project created will contain,
+	app module
+		app component
+
+	index.html		(in html file, we use this app component 	<app-root></app-root>
+		this is the home page of our project
+
+in angular, 
+	we create Single Page Application		SPA
+
+
+
+why this is <app-root>
+
+
+what is a component?
+	html		app.component.html
+	style		app.component.css
+	code		app.component.ts
+	testing		app.component.spec.ts			(karma jasmine)
+
+
+
+in angular project how can i create a component
+	ng g c login
+	
+	g = generate
+	c = component
+
+	this command is going to create a component called "login". This component can be plugged into one of the columns of our app component
+
+	login.component.html
+	login.component.css
+	login.component.ts
+	...spec.ts
+
+
+
+login
+	LoginComponent			this is a class decorated with @Component
+
+
+ng g c				component
+ng g s 				service
+ng g class			class
+ng g pipe			pipe
+
+
+annotations are called as Decorators in angular
+
+-------------------------------------------------------------
+1) create an angular project
+2) open the project folder in vs code
+3) delete all code in app component
+4) create a login component using terminal
+	ng g c login
+5) plug this login component inside app component		(using selector)
+6) run the project
+	ng serve -o			(this we can do in another cmd prompt. so that it is always running)
+=========================================
+Repeating
+==========================================
+1) create an angular project
+	ng new aj0072 --routing --style=css
+2) we open vs code and open the project folder
+	
+3) in vs code open a terminal
+	this terminal we will use to create components
+4) in cmd, we create project and run project (go inside the project folder and run)
+	ng serve
+	
+	then we can open browser and go to http://localhost:4200
+or
+	ng serve -o
+		this will automatically open browser and show output
+5) in vs terminal
+	ensure that you are inside your project folder and 
+	create a component
+		ng g c login
+
+	login.component.html
+	login.component.css
+	login.component.spec.ts		this is for karma jasmine testing	(we dont use it)
+	login.component.ts
+
+Lets us understand our project
+
+
+Bootstrap		styling		application of css
+
+Spring boot		spring frame work with conventions over configuration
