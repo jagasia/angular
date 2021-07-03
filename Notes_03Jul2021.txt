@@ -1,0 +1,271 @@
+angular js vs angular
+	history of angular
+
+javascript
+jquery
+angular js		(was no typescript)
+	version 1.0 and 1.1			1.x version
+
+	controller
+	modules
+	functions
+
+	interpolation
+
+angular 2.0		from version 2 onwards, angular js is called as "angular"
+
+	what is interpolation? this is present in angular every version
+
+	{{	}}			this is called as interpolation. this can be compared with JSP EL 
+			EL - 		Expression Language
+	${x}
+
+	exp language is only for read purpose. ie., to display only we use EL
+
+	{{ 20 }}			display 20
+
+	{{ x }}				this will not print x. If x is a variable, then its value is printed
+
+	<html>
+	<input type="text" value="Rama" />			what does this mean?
+								the textbox will have a value "Rama"
+
+	<input type="text" [value]="x" />			what does this mean?
+								this means, x is not the value. but a variable whose value will be displayed in the text box
+
+	{{ x }}	 
+
+
+static web pages
+	only html
+dynamic means, computed values can be displayed 
+	validation
+	calculation
+	computation
+
+
+Branch
+	bid
+	bname
+	bcity
+
+a component 
+	html			html markup code
+	css			styling
+	ts			logic			javascript or ts code 
+	spec.ts			unit testing 		karma jasmine
+
+Let us understand the component decorator
+	@Component
+
+
+
+in angular,
+	template means html code
+
+	templateUrl		means 		html file name
+	template		means		html code
+
+
+	'' 		single quotes can be used to write single line of text only
+	``		template quotes can be used to write multiple lines of html code
+			is present left side of button 1
+
+
+	document.getElementById("text1").value;
+
+
+binding
+----------
+1) property binding
+		<input type="text" value="rama" />
+2) event binding
+3) two-way data binding
+
+	
+
+Name: <input type="text" name="" id="" class="form-control" [value]="bname">
+this is called "Property Binding"
+	the property of a html element is bound to a "ts" variable
+
+	
+
+    Id: <input type="text" name="" id="" class="form-control" [value]="bid">
+    Name: <input type="text" name="" id="" class="form-control" [value]="bname">
+    City: <input type="text" name="" id="" class="form-control" [value]="bcity">
+
+
+in ts file
+  bid:string="B00002";
+  bname:string="Park circus avenue branch";
+  bcity:string="Kolkata";
+
+
+
+but it is one way
+	a change we do in html text box will  not reflect in the .ts file variable
+
+Event binding:
+--------------
+<input type="button" value="Add" class="btn btn-success" (click)="fnAdd()">&nbsp;
+
+(click)="fnAdd()"			here, fnAdd() function in .ts file is bound to the click event of button
+
+----------------------
+two-way data binding
+-----------------
+	a change in .ts file reflects in html element and VICE VERSA
+
+[()]	
+			
+******	In order to use two way binding, we have to import "FormsModule" in our app.module.ts
+
+
+-----------------------
+create a component "branch". Plug this component into app component
+bid
+bname
+bcity
+
+bind the .ts file variables to the html form elements using two way data binding
+
+import "FormsModule" in the app.module.ts
+
+use [(ngModel)]="bid"		name="bid"			name is compulsory
+
+do event binding and display the values entered by the user in console.log or alert
+
+
+Template driven Forms
+------------------------
+app.module.ts
+	import
+		FormsModule				ngModel is defined
+
+	this type  of programming is called as template driven forms where html form elements are bound to the ts variable
+
+
+let us first learn to create a class in typescript
+
+class Branch
+{
+	bid:string='B00001';
+	bname:string='New branch';
+	bcity:string='Kolkata';
+}
+
+Reactive Forms
+--------------
+
+we create an object representation of the html form
+<form>
+	bid
+	bname
+	bcity
+<form>
+
+this form can be represented as an object in ts file
+we can get the entire form data as an object
+
+Remember in java		modelAttribute?
+	we do the same
+
+	class Branch
+
+	<form>
+	addBranch(Branch branch)
+
+
+
+
+REST API
+	get mapping
+
+	localhost:8080/branch/B00001
+
+	{bid:.....}
+	POST mapping	
+	localhost:8080/branch
+		we have to provide branch object to the rest api to add a branch
+
+
+
+to convert OBJECT into JSON
+	JSON.stringify(branch);
+to convert JSON into OBJECT
+	branch=JSON.parse(json);
+
+
+
+  fnAdd()
+  {
+    // alert("hello world");
+    // alert(this.bid+" : "+this.bname+" : "+this.bcity);
+    var branch:Branch=new Branch();
+    branch.bid=this.bid;
+    branch.bname=this.bname;
+    branch.bcity=this.bcity;
+    console.log(branch);
+    alert(JSON.stringify(branch));
+  }
+
+
+we are moving to Reactive Forms module
+---------------
+1) app.module.ts
+	import 
+		ReactiveFormsModule
+
+2) declare an object rep of FORM
+	form group
+
+3) in the constructor build the formgroup
+	and define the members of the form
+
+4) in html form
+	map each element to the property of the form group
+
+
+
+lets do this with a new component
+	airline
+
+{"id":8,"name":"Thai Airways","country":"Thailand","logo":"https://upload.wikimedia.org/wikipedia/en/thumb/5/58/Thai_Airways_Logo.svg/200px-Thai_Airways_Logo.svg.png","slogan":"Smooth as Silk / I Fly THAI","head_quaters":"Jom Phol Subdistrict, Chatuchak, Bangkok, Thailand","website":"www.thaiairways.com","established":"1960"}
+
+id:number=8;
+name:string="Thai Airways";
+country:string="Thailand";
+logo:string="";
+slogon:string="";
+head_quarters:string="";
+website:string="";
+established:number=2021;
+
+
+
+Reactive form
+
+
+
+declare a var as
+	:any
+
+
+lets display all airlines in our page as table format
+using for loop
+
+
+
+------------------
+create a reactive form
+	in .ts
+		formgroup		(airlineForm)
+					(branchForm)
+		form builder should be injected to the constructor
+
+	
+
+
+app.module.ts
+.component.html
+.component.ts
