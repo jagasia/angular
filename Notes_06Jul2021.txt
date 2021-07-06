@@ -1,0 +1,81 @@
+Where are we now in angular?
+	i) binding
+	ii) FormsModule			
+		template driven forms
+	iii) ReactiveFormsModule
+	iv) Service
+		HttpClient
+	v) Input
+		<app-login> this is a directive
+		<app-login title="Login Form"></app-login>
+		<app-login [title]="x"></app-login>
+	vi) Output
+		EventEmitter
+			emit function
+
+
+
+ng build
+	to compile all ts files into js files
+	it will create "dist" folder
+
+<app-login title="Login form">
+	This is content
+</app-login>
+
+content provided by the parent component that should be displayed in the child component
+Where will this content be displayed?
+	the child component can specify where to display that content provided by the parent.
+	so we need a placeholder
+		<ng-content></ng-content>
+
+difference between input and content?
+
+Routing
+---------
+example:
+	in our app component, we will place a
+		Menu				(navbar)
+
+
+Lets remove all components from app component
+Put one menu
+	menu options are
+		Branch
+		Airline
+		Login
+
+whichever menu i click that component should be displayed in the specific location of our app component html
+specific location means?
+	do we have a placeholder?	yes,
+		<router-outlet></router-outlet>
+
+
+when i created a project, 
+	app.component.html had lot of lines of code where 
+		<router-outlet></router-outlet>
+
+while creating project we chosen routing (yes)
+	in app.module.ts
+		AppRoutingModule	is imported
+
+	a file named as
+		app-routing.module.ts	is created
+
+
+Route
+-----
+	mapping between 
+		url and component
+
+
+RouterLink
+----------
+	a link that provides urls
+
+
+
+
+Reactive forms Validations
+
+
