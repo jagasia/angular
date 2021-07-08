@@ -1,0 +1,9 @@
+Tools and Prerequisites
+Node.js and NPM—You will need to install this open-source JavaScript runtime environment and its package manager.
+Angular CLI—Install this handy command line interface for Angular.
+JDK and Eclipse for Java EE Developers—The Java EE IDE and tools I used in this example.
+TypeScript plugin for Eclipse—A typed superset of JavaScript that compiles to plain JavaScript.
+Terminal plugin for Eclipse—A fully working command-line Terminal inside Eclipse.
+Basic TypeScript, HTML and Eclipse usage knowledge
+
+install transpiler plugin for ecipse to support scss
